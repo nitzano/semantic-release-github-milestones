@@ -1,0 +1,26 @@
+name: Release
+on:
+  push:
+    branches:
+      - "*.x"
+      - alpha
+      - beta
+      - master
+      - next
+      - next-major
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "yarn"
+      - run: yarn
+      - run: npx semantic-release@18
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_BOT_NPM_TOKEN }}
