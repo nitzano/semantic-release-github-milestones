@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  npm_registry:
+    image: verdaccio/verdaccio
+    ports:
+      - "4873:4873"
