@@ -14,5 +14,8 @@
   },
   "scripts": {
     "release": "semantic-release"
+  },
+  "devDependencies": {
+    "xo": "^0.44.0"
   }
 }
