@@ -23,4 +23,4 @@ jobs:
       - run: npx semantic-release@18
         env:
           GITHUB_TOKEN: ${{ secrets.SEMREL_TOKEN }}
-          NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_BOT_NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
