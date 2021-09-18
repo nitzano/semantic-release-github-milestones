@@ -7,6 +7,19 @@
   "bugs": {
     "url": "https://github.com/nitzano/semantic-release-github-milestones/issues"
   },
+  "engines": {
+    "node": ">=14.17"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "milestone",
+    "notifications",
+    "publish",
+    "release",
+    "semantic-release",
+    "version"
+  ],
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
@@ -19,5 +32,9 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "xo": "^0.44.0"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true
   }
 }
