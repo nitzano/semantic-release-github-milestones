@@ -1,7 +1,15 @@
 version: "3.9"
 
 services:
-  npm_registry:
+  lib:
+    build: .
+    image: srgm:dev
+    tty: yes
+    command: /bin/sh
+    volumes:
+      - ./package.json:/usr/src/app/package.json
+      - ./yarn.lock:/usr/src/app/yarn.lock:delegated
+  registry:
     image: verdaccio/verdaccio
     ports:
       - "4873:4873"

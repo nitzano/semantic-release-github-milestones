@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:nitzano/semantic-release-github-milestones.git",
   "author": "Nitzan Ohana <16689354+nitzano@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "-": "^0.0.1",
+    "semantic-release": "^18.0.0"
+  }
 }
