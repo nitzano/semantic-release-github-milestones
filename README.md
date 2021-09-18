@@ -1,2 +1,3 @@
-# -semantic-release-github-milestones
+# Semantic-release-github-milestones
+
 Sync your github milestones with semantic release
