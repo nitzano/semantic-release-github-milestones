@@ -27,7 +27,8 @@
   },
   "scripts": {
     "release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "husky": "^7.0.2",
@@ -41,6 +42,6 @@
     "space": true
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,css,md, ts}": "prettier --write"
   }
 }
