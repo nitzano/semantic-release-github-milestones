@@ -29,9 +29,11 @@
     "prebuild": "yarn clean",
     "build": "tsc",
     "release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "ava"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "rimraf": "^3.0.2",
@@ -49,5 +51,13 @@
   },
   "lint-staged": {
     "*.{js,css,md,ts}": "xo --fix"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
