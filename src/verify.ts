@@ -1,7 +1,7 @@
 export function verify() {
   const a = 1;
 
-  // Test
+  // Test2
 
   return a;
 }
