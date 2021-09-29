@@ -41,6 +41,6 @@
     "space": true
   },
   "lint-staged": {
-    "*.{js,css,md, ts}": "xo --fix --prettier"
+    "*.{js,css,md,ts}": "xo --fix --prettier"
   }
 }
