@@ -27,8 +27,7 @@
   },
   "scripts": {
     "release": "semantic-release",
-    "prepare": "husky install",
-    "precommit": "lint-staged"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "husky": "^7.0.2",
