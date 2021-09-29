@@ -25,6 +25,8 @@
     "@octokit/rest": "^18.10.0"
   },
   "scripts": {
+    "clean": "rimraf build",
+    "prebuild": "yarn clean",
     "build": "tsc",
     "release": "semantic-release",
     "prepare": "husky install"
