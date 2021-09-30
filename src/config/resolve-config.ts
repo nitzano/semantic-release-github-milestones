@@ -1,6 +1,7 @@
 import {PluginConfig} from './types';
 
 interface Options {
+  searchChannel?: boolean;
   closeMilestone?: boolean;
 }
 
