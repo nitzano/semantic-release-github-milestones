@@ -13,7 +13,7 @@ const logger = getLogger().extend('resolve-config');
  * @return {*}  {PluginConfig}
  */
 export function resolveConfig(
-  _options: GlobalConfig,
+  _options: GlobalConfig | undefined,
   env: Record<string, string>,
 ): PluginConfig {
   logger('reading envs');
