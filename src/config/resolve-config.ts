@@ -1,6 +1,5 @@
-import {GlobalConfig} from 'semantic-release';
 import {getLogger} from '../logger';
-import {PluginConfig} from './types';
+import {Configuration, PluginConfig} from './types';
 
 const logger = getLogger().extend('resolve-config');
 
@@ -13,15 +12,15 @@ const logger = getLogger().extend('resolve-config');
  * @return {*}  {PluginConfig}
  */
 export function resolveConfig(
-  _options: GlobalConfig | undefined,
+  options: PluginConfig,
   env: Record<string, string>,
-): PluginConfig {
+): Configuration {
   logger('reading envs');
   // Envs
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
 
   // Options
-  // const { closeMilestone = false } = options;
+  const {closeMilestone} = options;
 
-  return {githubToken, closeMilestone: false};
+  return {githubToken, closeMilestone};
 }
