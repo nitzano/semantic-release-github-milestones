@@ -23,7 +23,8 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
-    "aggregate-error": "^4.0.0"
+    "aggregate-error": "^4.0.0",
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "clean": "rimraf build",
@@ -35,6 +36,7 @@
     "lint": "xo --fix"
   },
   "devDependencies": {
+    "@types/node": "^16.10.2",
     "@types/semantic-release": "^17.2.2",
     "ava": "^3.15.0",
     "husky": "^7.0.2",
