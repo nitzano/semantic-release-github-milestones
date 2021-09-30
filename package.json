@@ -22,7 +22,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^18.10.0"
+    "@octokit/rest": "^18.10.0",
+    "aggregate-error": "^4.0.0"
   },
   "scripts": {
     "clean": "rimraf build",
@@ -30,7 +31,8 @@
     "build": "tsc",
     "release": "semantic-release",
     "prepare": "husky install",
-    "test": "ava"
+    "test": "ava",
+    "lint": "xo"
   },
   "devDependencies": {
     "@types/semantic-release": "^17.2.2",
