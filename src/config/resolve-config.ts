@@ -1,5 +1,7 @@
+import debug from 'debug';
 import {PluginConfig} from './types';
 
+const logger = debug('resolve-config');
 interface Options {
   searchChannel?: boolean;
   closeMilestone?: boolean;
@@ -17,6 +19,7 @@ export function resolveConfig(
   options: Options,
   env: Record<string, string>,
 ): PluginConfig {
+  logger('reading envs');
   // Envs
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
 

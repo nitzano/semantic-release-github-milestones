@@ -24,6 +24,7 @@
   "dependencies": {
     "@octokit/rest": "^18.10.0",
     "aggregate-error": "^4.0.0",
+    "debug": "^4.3.2",
     "lodash": "^4.17.21"
   },
   "scripts": {
@@ -36,6 +37,7 @@
     "lint": "xo --fix"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.7",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.2",
     "@types/semantic-release": "^17.2.2",
