@@ -36,6 +36,7 @@
     "lint": "xo --fix"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.2",
     "@types/semantic-release": "^17.2.2",
     "ava": "^3.15.0",

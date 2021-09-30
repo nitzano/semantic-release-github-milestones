@@ -1,5 +1,5 @@
 import {Config, Context} from 'semantic-release';
-import {verifyGithub} from './verify-github';
+import {verifyGithub} from './verify/verify-github';
 
 let verified: boolean;
 
