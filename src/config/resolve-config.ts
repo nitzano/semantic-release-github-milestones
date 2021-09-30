@@ -1,4 +1,3 @@
-import {isNil} from 'lodash';
 import {PluginConfig} from './types';
 
 interface Options {
@@ -9,8 +8,11 @@ export function resolveConfig(
   options: Options,
   env: Record<string, string>,
 ): PluginConfig {
+  // Envs
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
-  const closeMilestone = !isNil(options.closeMilestone);
+
+  // Options
+  const {closeMilestone} = options;
 
   return {githubToken, closeMilestone};
 }
