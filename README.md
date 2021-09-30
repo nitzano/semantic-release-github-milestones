@@ -1,5 +1,6 @@
-# semantic-release-github-milestones
-
+<h1 align="center" style="border-bottom: none;"> semantic-release-github-milestones🚩🚀</h1>
+<h2 align="center">Use <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">Github milestones</a> with <a href="https://github.com/semantic-release/semantic-release">semantic-release</a></h2>
+<hr>
 🚧 under construction 🚧
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to verify all issues are closed on [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) before releasing a new version.
