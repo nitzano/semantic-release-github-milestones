@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
-    "aggregate-error": "^4.0.0",
+    "aggregate-error": "^3.1.0",
     "debug": "^4.3.2",
     "lodash": "^4.17.21"
   },
