@@ -1,12 +1,8 @@
+import {GlobalConfig} from 'semantic-release';
 import {getLogger} from '../logger';
 import {PluginConfig} from './types';
 
 const logger = getLogger().extend('resolve-config');
-
-interface Options {
-  searchChannel?: boolean;
-  closeMilestone?: boolean;
-}
 
 /**
  * Resolve config from options and environment variables
@@ -17,7 +13,7 @@ interface Options {
  * @return {*}  {PluginConfig}
  */
 export function resolveConfig(
-  options: Options,
+  _options: GlobalConfig,
   env: Record<string, string>,
 ): PluginConfig {
   logger('reading envs');
@@ -25,7 +21,7 @@ export function resolveConfig(
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
 
   // Options
-  const {closeMilestone = false} = options;
+  // const { closeMilestone = false } = options;
 
-  return {githubToken, closeMilestone};
+  return {githubToken, closeMilestone: false};
 }
