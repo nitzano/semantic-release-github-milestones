@@ -1,7 +1,8 @@
-import debug from 'debug';
+import {getLogger} from '../logger';
 import {PluginConfig} from './types';
 
-const logger = debug('resolve-config');
+const logger = getLogger().extend('resolve-config');
+
 interface Options {
   searchChannel?: boolean;
   closeMilestone?: boolean;
