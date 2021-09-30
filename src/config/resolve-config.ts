@@ -4,6 +4,14 @@ interface Options {
   closeMilestone?: boolean;
 }
 
+/**
+ * Resolve config from options and environment variables
+ *
+ * @export
+ * @param {Options} options
+ * @param {Record<string, string>} env
+ * @return {*}  {PluginConfig}
+ */
 export function resolveConfig(
   options: Options,
   env: Record<string, string>,
