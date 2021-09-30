@@ -24,13 +24,11 @@
 | `success`          | Close the target [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). |
 | `fail`             | Show a descriptive message to why the release failed                                                                               |
 
-# Intro
-
-This [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin does the following:
+# Highlights
 
 1. Verifies all issues are closed on matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) before releasing a new version.
-1. Appends milestone data to releases (FUTURE VERSION)
-1. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
+2. Appends milestone data to releases (FUTURE VERSION)
+3. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
 
 ## Example
 
@@ -39,17 +37,25 @@ This [**semantic-release**](https://github.com/semantic-release/semantic-release
   - `beta` - 0 open issues
   - `1.1.0` - 4 open issues
 
-### Running `npx semantic-release` on `next` :
+### Running `npx semantic-release` on `next`
 
+```
 TBD
+```
 
-### Running `npx semantic-release` on `beta` :
+### Running `npx semantic-release` on `beta`
 
+```
 TBD
+```
 
-### Running `npx semantic-release` on `master` (where the next version to be deployed is `v1.1.0`):
+### Running `npx semantic-release` on `master`
 
+(where the next version to be deployed is `v1.1.0`)
+
+```
 TBD
+```
 
 # Install
 
