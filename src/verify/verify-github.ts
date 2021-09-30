@@ -14,7 +14,7 @@ export async function verifyGithub(_pluginConfig: Config, context: Context) {
   const {env, options, logger: semRelLogger} = context;
 
   const config = resolveConfig(options, env);
-  logger(`test stuff: ${JSON.stringify(options, null, 2)}`);
+  logger(`test options: ${JSON.stringify(options, null, 2)}`);
   logger(`test config: ${JSON.stringify(config, null, 2)}`);
 
   const errors: Error[] = [];
