@@ -1,7 +1,11 @@
+import {isNil} from 'lodash';
 import {PluginConfig} from './types';
 
-export function resolveConfig(env: Record<string, string>): PluginConfig {
+export function resolveConfig(
+  {closeMilestone}: Record<string, string | boolean>,
+  env: Record<string, string>,
+): PluginConfig {
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
 
-  return {githubToken};
+  return {githubToken, closeMilestone: !isNil(closeMilestone)};
 }

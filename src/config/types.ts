@@ -1,10 +1,10 @@
 export interface PluginConfig {
-  // Github token to be used
+  /** Github token to be used  */
   githubToken: string;
-  // Github enterprise endpoint url
+  /**  Github enterprise endpoint url */
   githubUrl?: string;
-  // Github enterprise API prefix
+  /** Github enterprise API prefix */
   githubApiPathPrefix?: string;
-  // Should close
+  /** Should close milestone on success? */
   closeMilestone?: boolean;
 }
