@@ -1,7 +1,7 @@
 {
   "name": "semantic-release-github-milestones",
   "version": "0.0.0-development",
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "git@github.com:nitzano/semantic-release-github-milestones.git",
   "author": "Nitzan Ohana <16689354+nitzano@users.noreply.github.com>",
   "bugs": {
@@ -10,6 +10,9 @@
   "engines": {
     "node": ">=14.17"
   },
+  "files": [
+    "build"
+  ],
   "keywords": [
     "git",
     "github",
@@ -23,7 +26,9 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^18.10.0",
-    "aggregate-error": "^4.0.0"
+    "aggregate-error": "^3.1.0",
+    "debug": "^4.3.2",
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "clean": "rimraf build",
@@ -35,6 +40,9 @@
     "lint": "xo --fix"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^16.10.2",
     "@types/semantic-release": "^17.2.2",
     "ava": "^3.15.0",
     "husky": "^7.0.2",

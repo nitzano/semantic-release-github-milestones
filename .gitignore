@@ -103,8 +103,10 @@ dist
 # TernJS port file
 .tern-port
 
-# misc
-.npmrc
-
 # tsc
 build
+
+# misc
+.npmrc
+.vscode
+test-pkg
