@@ -3,7 +3,7 @@ import test, {ExecutionContext} from 'ava';
 
 test.beforeEach((t: ExecutionContext) => {
   t.context = {foo: 'bar'};
-  console.log('hello!2');
+  console.log('hello!3');
 });
 
 test('listMilestones', (t) => {
