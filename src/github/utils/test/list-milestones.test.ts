@@ -1,3 +1,4 @@
+import process from 'node:process';
 import test, {ExecutionContext} from 'ava';
 
 test.beforeEach((t: ExecutionContext) => {
@@ -6,5 +7,6 @@ test.beforeEach((t: ExecutionContext) => {
 });
 
 test('listMilestones', (t) => {
+  console.log(process.env.TEST);
   t.pass();
 });
