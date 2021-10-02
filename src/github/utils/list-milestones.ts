@@ -1,5 +1,5 @@
 import {Octokit} from '@octokit/rest';
-import {getLogger} from '../logger';
+import {getLogger} from '../../logger';
 
 const logger = getLogger();
 
@@ -8,7 +8,7 @@ const logger = getLogger();
  *
  * @export
  */
-export async function getMilestones(
+export async function listMilestones(
   client: Octokit,
   repo: string,
   owner: string,
@@ -16,5 +16,5 @@ export async function getMilestones(
   const milestones = await client.issues.listMilestones({repo, owner});
   logger(milestones);
 
-  return 'work';
+  return 'works';
 }
