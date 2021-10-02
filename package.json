@@ -61,7 +61,10 @@
   },
   "xo": {
     "prettier": true,
-    "space": true
+    "space": true,
+    "rules": {
+      "unicorn/prefer-node-protocol": "off"
+    }
   },
   "lint-staged": {
     "*.{js,css,md,ts}": "xo --fix"

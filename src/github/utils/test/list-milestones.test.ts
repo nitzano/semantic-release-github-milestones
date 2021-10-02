@@ -1,4 +1,4 @@
-import process from 'node:process';
+import process from 'process';
 import test, {ExecutionContext} from 'ava';
 
 test.beforeEach((t: ExecutionContext) => {
