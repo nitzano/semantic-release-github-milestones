@@ -22,7 +22,7 @@ export function createClient(githubUrl: string, githubToken: string): Octokit {
         );
 
         // Retry twice after hitting a rate limit error, then give up
-        if (options.request?.retryCount <= 2) {
+        if (options.request.retryCount <= 2) {
           logger(`Retrying after ${retryAfter} seconds!`);
           return true;
         }
