@@ -1,7 +1,4 @@
 import {Octokit} from '@octokit/rest';
-import {getLogger} from '../../logger';
-
-const logger = getLogger();
 
 /**
  * Get github milestones for a repository
@@ -12,9 +9,10 @@ export async function listMilestones(
   client: Octokit,
   repo: string,
   owner: string,
-): Promise<string> {
-  const milestones = await client.issues.listMilestones({repo, owner});
-  logger(milestones);
-
-  return 'works';
+): Promise<Record<string, string>> {
+  const {data: milestones = {}} = await client.issues.listMilestones({
+    repo,
+    owner,
+  });
+  return milestones;
 }
