@@ -9,7 +9,7 @@ export async function listMilestones(
   client: Octokit,
   repo: string,
   owner: string,
-): Promise<Record<string, string>> {
+): Promise<Record<string, any>> {
   const {data: milestones = {}} = await client.issues.listMilestones({
     repo,
     owner,
