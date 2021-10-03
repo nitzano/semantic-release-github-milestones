@@ -1,9 +1,13 @@
 import process from 'process';
 import test, {ExecutionContext} from 'ava';
+import {createClient} from '../../client/create-client';
 
 test.beforeEach((t: ExecutionContext) => {
-  t.context = {foo: 'bar'};
-  console.log('hello!3');
+  if (process.env.GITHUB_TOKEN && process.env.GITHUB_URL) {
+    t.context = {
+      client: createClient(process.env.GITHUB_TOKEN, process.env.GITHUB_URL),
+    };
+  }
 });
 
 test('listMilestones', (t) => {

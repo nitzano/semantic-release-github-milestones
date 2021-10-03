@@ -4,7 +4,15 @@ import {getLogger} from '../../logger';
 
 const logger = getLogger();
 
-export function createClient(githubUrl: string, githubToken: string): Octokit {
+/**
+ * Create github client
+ *
+ * @export
+ * @param {string} githubUrl
+ * @param {string} githubToken
+ * @return {*}  {Octokit}
+ */
+export function createClient(githubToken: string, githubUrl: string): Octokit {
   const ThrottledOctokit = Octokit.plugin(throttling);
   logger(`baseUrl: ${githubUrl}`);
 
