@@ -12,13 +12,12 @@ const logger = getLogger();
  * @param {string} githubToken
  * @return {*}  {Octokit}
  */
-export function createClient(githubToken: string, githubUrl: string): Octokit {
+export function createClient(githubToken: string): Octokit {
   const ThrottledOctokit = Octokit.plugin(throttling);
-  logger(`baseUrl: ${githubUrl}`);
 
   const octokit = new ThrottledOctokit({
     auth: `token ${githubToken}`,
-    baseUrl: githubUrl,
+    baseUrl: 'https://api.github.com', // For now it's fixed
     throttle: {
       onRateLimit: (
         retryAfter: number,
