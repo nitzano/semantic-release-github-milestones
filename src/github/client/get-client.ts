@@ -3,12 +3,9 @@ import {createClient} from './create-client';
 
 let client: Octokit;
 
-export function getGithubClient(
-  githubToken: string,
-  githubUrl: string,
-): Octokit {
+export function getGithubClient(githubToken: string): Octokit {
   if (!client) {
-    client = createClient(githubUrl, githubToken);
+    client = createClient(githubToken);
   }
 
   return client;
