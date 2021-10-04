@@ -27,6 +27,7 @@
   "dependencies": {
     "@octokit/plugin-throttling": "^3.5.2",
     "@octokit/rest": "^18.10.0",
+    "@semantic-release/error": "^3.0.0",
     "aggregate-error": "^3.1.0",
     "debug": "^4.3.2",
     "git-url-parse": "^11.6.0",
