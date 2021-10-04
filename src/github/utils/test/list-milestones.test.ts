@@ -18,7 +18,5 @@ test('listMilestones', async (t) => {
     .reply(200, FAKE_MILESTONES);
 
   const result = await listMilestones(client, 'repo1', 'owner1');
-  console.log(result);
-
-  t.pass();
+  t.is(result.length, 2);
 });
