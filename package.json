@@ -30,8 +30,7 @@
     "aggregate-error": "^3.1.0",
     "debug": "^4.3.2",
     "faker": "^5.5.3",
-    "lodash": "^4.17.21",
-    "nyc": "^15.1.0"
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "clean": "rimraf build",
@@ -39,7 +38,8 @@
     "build": "tsc",
     "release": "semantic-release",
     "prepare": "husky install",
-    "test": "ava",
+    "test": "c8 ava",
+    "test:watch": "yarn test --watch",
     "lint": "xo --fix"
   },
   "devDependencies": {
