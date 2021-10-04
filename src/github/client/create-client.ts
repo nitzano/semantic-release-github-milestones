@@ -17,7 +17,7 @@ export function createClient(githubToken: string): Octokit {
 
   const octokit = new ThrottledOctokit({
     auth: `token ${githubToken}`,
-    baseUrl: 'https://api.github.com', // For now it's fixed
+    baseUrl: 'https://api.github.com', // For now it's a fixed const
     throttle: {
       onRateLimit: (
         retryAfter: number,
@@ -28,7 +28,6 @@ export function createClient(githubToken: string): Octokit {
           `Request quota exhausted for request ${options.method} ${options.url}`,
         );
 
-        // Retry twice after hitting a rate limit error, then give up
         if (options.request.retryCount <= 2) {
           logger(`Retrying after ${retryAfter} seconds!`);
           return true;
@@ -41,7 +40,7 @@ export function createClient(githubToken: string): Octokit {
       ) => {
         // Does not retry, only logs a warning
         octokit.log.warn(
-          `Abuse detected for request ${options?.method} ${options?.url}`,
+          `Abuse detected for request ${options.method} ${options.url}`,
         );
       },
     },
