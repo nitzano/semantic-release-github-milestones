@@ -17,6 +17,7 @@ export async function verifyGithub(
 
   logger.log('test plugin! 🚀🚀🚀🚀');
   const config = resolveConfig(options as PluginConfig, env);
+  logger.log(`repo url: ${options.repositoryUrl}`);
   logger.log(`test options: ${JSON.stringify(options, null, 2)}`);
   logger.log(`test config: ${JSON.stringify(pluginConfig, null, 2)}`);
   logger.log(`plugin config: ${JSON.stringify(config, null, 2)}`);
