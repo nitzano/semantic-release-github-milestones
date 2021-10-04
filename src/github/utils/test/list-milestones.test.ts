@@ -1,4 +1,3 @@
-import process from 'process';
 import {Octokit} from '@octokit/rest';
 import test from 'ava';
 import nock from 'nock';
@@ -12,17 +11,14 @@ test.afterEach.always(() => {
 });
 
 test('listMilestones', async (t) => {
-  let client: Octokit;
+  const client: Octokit = createClient('token');
 
   nock('https://api.github.com')
     .get('/repos/owner1/repo1/milestones')
     .reply(200, FAKE_MILESTONES);
 
-  if (process.env.GITHUB_TOKEN) {
-    client = createClient(process.env.GITHUB_TOKEN);
-    const result = await listMilestones(client, 'repo1', 'owner1');
-    console.log(result);
-  }
+  const result = await listMilestones(client, 'repo1', 'owner1');
+  console.log(result);
 
   t.pass();
 });
