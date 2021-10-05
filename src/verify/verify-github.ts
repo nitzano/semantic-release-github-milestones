@@ -32,6 +32,9 @@ export async function verifyGithub(
     errors.push(new SemanticReleaseError('could not parse repository owner'));
   }
 
+  pluginConfig.repoOwner = owner;
+  pluginConfig.repoName = name;
+
   logger.log(`test options: ${JSON.stringify(options, null, 2)}`);
   logger.log(`test config: ${JSON.stringify(pluginConfig, null, 2)}`);
   logger.log(`plugin config: ${JSON.stringify(config, null, 2)}`);
