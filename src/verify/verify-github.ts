@@ -1,4 +1,6 @@
+import SemanticReleaseError from '@semantic-release/error';
 import AggregateError from 'aggregate-error';
+import gitUrlParse, {GitUrl} from 'git-url-parse';
 import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';
 import {PluginConfig} from '../config/types';
@@ -15,9 +17,21 @@ export async function verifyGithub(
   const {env, options, logger} = context;
   const errors: Error[] = [];
 
-  logger.log('test plugin! 🚀🚀🚀🚀');
+  const {repositoryUrl = ''} = options as PluginConfig;
+
   const config = resolveConfig(options as PluginConfig, env);
-  logger.log(`repo url: ${options.repositoryUrl}`);
+
+  const {name, owner}: GitUrl = gitUrlParse(repositoryUrl);
+  logger.log(`repo=${repositoryUrl} name=${name} owner=${owner}`);
+
+  if (!name) {
+    errors.push(new SemanticReleaseError('could not parse repository name'));
+  }
+
+  if (!owner) {
+    errors.push(new SemanticReleaseError('could not parse repository owner'));
+  }
+
   logger.log(`test options: ${JSON.stringify(options, null, 2)}`);
   logger.log(`test config: ${JSON.stringify(pluginConfig, null, 2)}`);
   logger.log(`plugin config: ${JSON.stringify(config, null, 2)}`);
