@@ -20,6 +20,7 @@ export async function verifyGithub(
   const {repositoryUrl = ''} = options as PluginConfig;
 
   const config = resolveConfig(options as PluginConfig, env);
+  logger.log(`config=${JSON.stringify(config, null, 2)}`);
 
   const {name, owner}: GitUrl = gitUrlParse(repositoryUrl);
   logger.log(`repo=${repositoryUrl} name=${name} owner=${owner}`);
@@ -35,11 +36,6 @@ export async function verifyGithub(
   pluginConfig.repoOwner = owner;
   pluginConfig.repoName = name;
 
-  logger.log(`test options: ${JSON.stringify(options, null, 2)}`);
-  logger.log(`test config: ${JSON.stringify(pluginConfig, null, 2)}`);
-  logger.log(`plugin config: ${JSON.stringify(config, null, 2)}`);
-
-  // Throw any errors we accumulated during the validation
   if (errors.length > 0) {
     // eslint-disable-next-line unicorn/error-message
     throw new AggregateError(errors);
