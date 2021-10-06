@@ -1,6 +1,7 @@
 import SemanticReleaseError from '@semantic-release/error';
 import AggregateError from 'aggregate-error';
 import gitUrlParse, {GitUrl} from 'git-url-parse';
+import {emojify} from 'node-emoji';
 import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';
 import {PluginConfig} from '../config/types';
@@ -23,7 +24,12 @@ export async function verifyGithub(
   logger.log(`config=${JSON.stringify(config, null, 2)}`);
 
   const {name, owner}: GitUrl = gitUrlParse(repositoryUrl);
-  logger.log(`repo=${repositoryUrl} name=${name} owner=${owner}`);
+
+  logger.log(
+    emojify(
+      `:triangular_flag_on_post: repo=${repositoryUrl} name=${name} owner=${owner}`,
+    ),
+  );
 
   if (!name) {
     errors.push(new SemanticReleaseError('could not parse repository name'));
