@@ -37,7 +37,6 @@ export async function verifyGithub(
   pluginConfig.repoName = name;
 
   if (errors.length > 0) {
-    // eslint-disable-next-line unicorn/error-message
     throw new AggregateError(errors);
   }
 }
