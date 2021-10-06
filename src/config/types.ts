@@ -4,7 +4,7 @@ interface PluginOptions {
   /** Close milestone on success? */
   closeMilestones?: boolean;
   /** Publish only if all issues are closed */
-  checkClosedIssues?: boolean;
+  checkIssues?: boolean;
   /** Append milestone link and description to notes */
   appendNotes?: boolean;
 }
