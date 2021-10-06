@@ -5,6 +5,8 @@ interface PluginOptions {
   closeMilestoneOnSuccess?: boolean;
   /** Publish only if all issues are closed */
   checkClosedIssues?: boolean;
+  /** Append milestone link and description to notes */
+  appendNotes?: boolean;
 }
 
 export interface PluginConfig extends GlobalConfig, PluginOptions {}
