@@ -1,8 +1,10 @@
 import {GlobalConfig} from 'semantic-release';
 
 interface PluginOptions {
-  /** Should close milestone on success? */
-  closeMilestone?: boolean;
+  /** Close milestone on success? */
+  closeMilestoneOnSuccess?: boolean;
+  /** Publish only if all issues are closed */
+  checkClosedIssues?: boolean;
 }
 
 export interface PluginConfig extends GlobalConfig, PluginOptions {}
