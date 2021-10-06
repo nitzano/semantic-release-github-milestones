@@ -42,7 +42,7 @@
     "prepare": "husky install",
     "test": "nyc ava",
     "test:watch": "yarn test --watch",
-    "lint": "xo --fix"
+    "lint": "xo"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
