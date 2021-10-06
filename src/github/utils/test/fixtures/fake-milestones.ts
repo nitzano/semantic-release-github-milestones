@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export const FAKE_MILESTONES: any = [
   {
     url: 'https://api.github.com/repos/owner1/repo1/milestones/1',
