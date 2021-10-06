@@ -31,7 +31,8 @@
     "aggregate-error": "^3.1.0",
     "debug": "^4.3.2",
     "git-url-parse": "^11.6.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-emoji": "^1.11.0"
   },
   "scripts": {
     "clean": "rimraf build",
