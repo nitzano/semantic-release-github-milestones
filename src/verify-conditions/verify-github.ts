@@ -51,8 +51,8 @@ export async function verifyGithub(
   const client = createClient(config.githubToken);
   const milestones: GithubMilestone[] = await listMilestones(
     client,
-    repoOwner,
     repoName,
+    repoOwner,
   );
   debugLogger(`milestones=${JSON.stringify(milestones, null, 2)}`);
 
