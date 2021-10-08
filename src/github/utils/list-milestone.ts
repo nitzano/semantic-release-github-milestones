@@ -2,7 +2,7 @@ import {Octokit} from '@octokit/rest';
 import {getLogger} from '../../logger';
 import {GithubMilestone} from '../../types/github-milestone';
 
-const logger = getLogger().extend('list-milestones');
+const debugLogger = getLogger().extend('list-milestones');
 
 /**
  * Get github milestones for a repository
@@ -20,7 +20,7 @@ export async function listMilestones(
     owner,
   });
 
-  logger(`milestone= ${JSON.stringify(milestones, null, 2)}`);
+  debugLogger(`found ${milestones?.length} milestones`);
   const githubMilestones = milestones.map(
     ({
       title,

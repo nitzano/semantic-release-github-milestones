@@ -71,8 +71,7 @@
     "space": true,
     "rules": {
       "unicorn/prefer-node-protocol": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "sort-keys": "warn"
+      "@typescript-eslint/no-unsafe-call": "off"
     }
   },
   "lint-staged": {
