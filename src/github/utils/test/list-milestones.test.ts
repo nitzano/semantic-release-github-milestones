@@ -2,7 +2,7 @@ import {Octokit} from '@octokit/rest';
 import test from 'ava';
 import nock from 'nock';
 import {createClient} from '../../client/create-client';
-import {listMilestones} from '../list-milestones';
+import {listMilestones} from '../list-milestone';
 import {FAKE_MILESTONES} from './fixtures/fake-milestones';
 
 test.afterEach.always(() => {

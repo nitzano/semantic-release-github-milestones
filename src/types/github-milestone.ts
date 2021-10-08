@@ -1,8 +1,8 @@
-export interface GithubMilestones {
-  name: string;
-  description?: string;
+export interface GithubMilestone {
+  title: string | null;
+  description?: string | null;
   url: string;
-  openIssues: number;
-  closesIssues: number;
+  openIssues?: number;
+  closesIssues?: number;
   state?: 'open' | 'closed' | 'all';
 }
