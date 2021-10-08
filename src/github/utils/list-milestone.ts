@@ -21,11 +21,23 @@ export async function listMilestones(
   });
 
   logger(`milestone = ${JSON.stringify(milestones, null, 2)}`);
-  const githubMilestones = milestones.map(({title, description, url}) => ({
-    title,
-    description,
-    url,
-  }));
+  const githubMilestones = milestones.map(
+    ({
+      title,
+      description,
+      url,
+      open_issues: openIssues,
+      closed_issues: closedIssues,
+      state,
+    }) => ({
+      title,
+      description,
+      url,
+      openIssues,
+      closedIssues,
+      state,
+    }),
+  );
 
   return githubMilestones;
 }
