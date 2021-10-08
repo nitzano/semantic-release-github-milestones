@@ -25,10 +25,13 @@ export async function verifyGithub(
 
   const {repositoryUrl = ''} = options as PluginConfig;
 
+  // Build config
   const config = resolveConfig(options as PluginConfig, env);
   pluginConfig.config = config;
+
   debugLogger(`config=${JSON.stringify(config, null, 2)}`);
 
+  // Extract git url information
   const {name: repoName, owner: repoOwner}: GitUrl = gitUrlParse(repositoryUrl);
 
   debugLogger(`repo=${repositoryUrl} name=${repoName} owner=${repoOwner}`);
@@ -51,6 +54,8 @@ export async function verifyGithub(
     repoName,
     repoOwner,
   );
+  debugLogger(`milestones=${JSON.stringify(milestones, null, 2)}`);
+
   pluginConfig.milestones = milestones;
 
   if (errors.length > 0) {
