@@ -4,7 +4,10 @@ import gitUrlParse, {GitUrl} from 'git-url-parse';
 import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';
 import {PluginConfig} from '../config/types';
+import {createClient} from '../github/client/create-client';
+import {listMilestones} from '../github/utils/list-milestone';
 import {getLogger} from '../logger';
+import {GithubMilestone} from '../types/github-milestone';
 
 const debugLogger = getLogger();
 
@@ -26,20 +29,29 @@ export async function verifyGithub(
   pluginConfig.config = config;
   debugLogger(`config=${JSON.stringify(config, null, 2)}`);
 
-  const {name, owner}: GitUrl = gitUrlParse(repositoryUrl);
+  const {name: repoName, owner: repoOwner}: GitUrl = gitUrlParse(repositoryUrl);
 
-  debugLogger(`repo=${repositoryUrl} name=${name} owner=${owner}`);
+  debugLogger(`repo=${repositoryUrl} name=${repoName} owner=${repoOwner}`);
 
-  if (!name) {
+  if (!repoName) {
     errors.push(new SemanticReleaseError('could not parse repository name'));
   }
 
-  if (!owner) {
+  if (!repoOwner) {
     errors.push(new SemanticReleaseError('could not parse repository owner'));
   }
 
-  pluginConfig.repoOwner = owner;
-  pluginConfig.repoName = name;
+  pluginConfig.repoOwner = repoOwner;
+  pluginConfig.repoName = repoName;
+
+  // List milestones
+  const client = createClient(config.githubToken);
+  const milestones: GithubMilestone[] = await listMilestones(
+    client,
+    repoName,
+    repoOwner,
+  );
+  pluginConfig.milestones = milestones;
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
