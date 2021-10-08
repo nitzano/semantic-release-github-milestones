@@ -20,14 +20,14 @@ export async function listMilestones(
     owner,
   });
 
-  logger(`milestone = ${JSON.stringify(milestones, null, 2)}`);
+  logger(`milestone= ${JSON.stringify(milestones, null, 2)}`);
   const githubMilestones = milestones.map(
     ({
       title,
-      description,
       url,
-      open_issues: openIssues,
+      description,
       closed_issues: closedIssues,
+      open_issues: openIssues,
       state,
     }) => ({
       title,
