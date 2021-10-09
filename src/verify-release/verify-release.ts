@@ -17,7 +17,7 @@ export async function verifyMilestones(
 
   //   Const config = resolveConfig(options as PluginConfig, env);
 
-  logger.log(emojify(`:triangular_flag_on_post: verifyRelease 💛`));
+  logger.log(emojify(`:triangular_flag_on_post: processing`));
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
