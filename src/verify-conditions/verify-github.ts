@@ -19,7 +19,7 @@ const debugLogger = getLogger();
 export async function verifyGithub(
   pluginConfig: GlobalConfig,
   context: Context,
-) {
+): Promise<GithubMilestone[]> {
   const {env, options} = context;
   const errors: Error[] = [];
 
@@ -49,16 +49,15 @@ export async function verifyGithub(
 
   // List milestones
   const client = createClient(config.githubToken);
-  const milestones: GithubMilestone[] = await listMilestones(
+  const githubMilestones: GithubMilestone[] = await listMilestones(
     client,
     repoName,
     repoOwner,
   );
-  debugLogger(`milestones=${JSON.stringify(milestones, null, 2)}`);
-
-  pluginConfig.milestones = milestones;
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
   }
+
+  return githubMilestones;
 }
