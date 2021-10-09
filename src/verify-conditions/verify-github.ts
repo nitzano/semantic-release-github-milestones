@@ -5,7 +5,7 @@ import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';
 import {PluginConfig} from '../config/types';
 import {createClient} from '../github/client/create-client';
-import {listMilestones} from '../github/utils/list-milestone';
+import {listMilestones} from '../github/utils/list-milestones';
 import {getLogger} from '../logger';
 import {GithubMilestone} from '../types/github-milestone';
 
