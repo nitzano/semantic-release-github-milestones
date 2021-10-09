@@ -4,6 +4,12 @@ import gitUrlParse, {GitUrl} from 'git-url-parse';
 import {Context, GlobalConfig} from 'semantic-release';
 import {resolveConfig} from '../config/resolve-config';
 import {PluginConfig} from '../config/types';
+import {createClient} from '../github/client/create-client';
+import {listMilestones} from '../github/utils/list-milestones';
+import {getLogger} from '../logger';
+import {GithubMilestone} from '../types/github-milestone';
+
+const debugLogger = getLogger();
 
 /**
  * Called by semantic-release during the verification step
@@ -13,31 +19,45 @@ import {PluginConfig} from '../config/types';
 export async function verifyGithub(
   pluginConfig: GlobalConfig,
   context: Context,
-) {
-  const {env, options, logger} = context;
+): Promise<GithubMilestone[]> {
+  const {env, options} = context;
   const errors: Error[] = [];
 
   const {repositoryUrl = ''} = options as PluginConfig;
 
+  // Build config
   const config = resolveConfig(options as PluginConfig, env);
-  logger.log(`config=${JSON.stringify(config, null, 2)}`);
+  pluginConfig.config = config;
 
-  const {name, owner}: GitUrl = gitUrlParse(repositoryUrl);
-  logger.log(`repo=${repositoryUrl} name=${name} owner=${owner}`);
+  debugLogger(`config=${JSON.stringify(config, null, 2)}`);
 
-  if (!name) {
+  // Extract git url information
+  const {name: repoName, owner: repoOwner}: GitUrl = gitUrlParse(repositoryUrl);
+
+  debugLogger(`repo=${repositoryUrl} name=${repoName} owner=${repoOwner}`);
+
+  if (!repoName) {
     errors.push(new SemanticReleaseError('could not parse repository name'));
   }
 
-  if (!owner) {
+  if (!repoOwner) {
     errors.push(new SemanticReleaseError('could not parse repository owner'));
   }
 
-  pluginConfig.repoOwner = owner;
-  pluginConfig.repoName = name;
+  pluginConfig.repoOwner = repoOwner;
+  pluginConfig.repoName = repoName;
+
+  // List milestones
+  const client = createClient(config.githubToken);
+  const githubMilestones: GithubMilestone[] = await listMilestones(
+    client,
+    repoName,
+    repoOwner,
+  );
 
   if (errors.length > 0) {
-    // eslint-disable-next-line unicorn/error-message
     throw new AggregateError(errors);
   }
+
+  return githubMilestones;
 }

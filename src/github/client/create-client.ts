@@ -13,6 +13,7 @@ const logger = getLogger();
  * @return {*}  {Octokit}
  */
 export function createClient(githubToken: string): Octokit {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const ThrottledOctokit = Octokit.plugin(throttling);
 
   const octokit = new ThrottledOctokit({

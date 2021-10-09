@@ -1,4 +1,8 @@
 import {Octokit} from '@octokit/rest';
+import {getLogger} from '../../logger';
+import {GithubMilestone} from '../../types/github-milestone';
+
+const debugLogger = getLogger().extend('list-milestones');
 
 /**
  * Get github milestones for a repository
@@ -7,12 +11,33 @@ import {Octokit} from '@octokit/rest';
  */
 export async function listMilestones(
   client: Octokit,
+
   repo: string,
   owner: string,
-): Promise<Record<string, any>> {
-  const {data: milestones = {}} = await client.issues.listMilestones({
+): Promise<GithubMilestone[]> {
+  const {data: milestones = []} = await client.issues.listMilestones({
     repo,
     owner,
   });
-  return milestones;
+
+  debugLogger(`found ${milestones?.length} milestones`);
+  const githubMilestones = milestones.map(
+    ({
+      title,
+      url,
+      description,
+      closed_issues: closedIssues,
+      open_issues: openIssues,
+      state,
+    }) => ({
+      title,
+      description,
+      url,
+      openIssues,
+      closedIssues,
+      state,
+    }),
+  );
+
+  return githubMilestones;
 }

@@ -26,12 +26,13 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/plugin-throttling": "^3.5.2",
-    "@semantic-release/error": "^3.0.0",
     "@octokit/rest": "^18.11.4",
+    "@semantic-release/error": "^3.0.0",
     "aggregate-error": "^3.1.0",
     "debug": "^4.3.2",
     "git-url-parse": "^11.6.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node-emoji": "^1.11.0"
   },
   "scripts": {
     "clean": "rimraf build",
@@ -41,7 +42,7 @@
     "prepare": "husky install",
     "test": "nyc ava",
     "test:watch": "yarn test --watch",
-    "lint": "xo --fix"
+    "lint": "xo"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
