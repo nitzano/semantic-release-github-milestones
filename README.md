@@ -30,32 +30,27 @@
 2. Appends milestone data to releases (FUTURE VERSION)
 3. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
 
-## Example
+## Examples
 
-- Github repo with the following milestones
-- - `next` - 2 open issues
-  - `beta` - 0 open issues
-  - `1.1.0` - 4 open issues
-
-### Running `npx semantic-release` on `next`
+### Milestone with open issues
 
 ```
-TBD
+[semantic-release] [semantic-release-github-milestones] › ℹ  🚩 Github Milestone: v1.0.1  🚩
+[semantic-release] [semantic-release-github-milestones] › ℹ  (https://github.com/owner1/repo1/milestone/1)
+[semantic-release] [semantic-release-github-milestones] › ℹ  2 total issues
+[semantic-release] [semantic-release-github-milestones] › ℹ  ⚠️ ⚠️  2 open issues ⚠️ ⚠️
 ```
 
-### Running `npx semantic-release` on `beta`
+### Milestone with no open issues
 
 ```
-TBD
+[semantic-release] [semantic-release-github-milestones] › ℹ  🚩 Github Milestone: v1.0.1  🚩
+[semantic-release] [semantic-release-github-milestones] › ℹ  (https://github.com/owner1/repo1/milestone/1)
+[semantic-release] [semantic-release-github-milestones] › ℹ  0 total issues
+[semantic-release] [semantic-release-github-milestones] › ℹ  No open issues ✔️
 ```
 
-### Running `npx semantic-release` on `master`
 
-(where the next version to be deployed is `v1.1.0`)
-
-```
-TBD
-```
 
 # Install
 

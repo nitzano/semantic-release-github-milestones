@@ -62,7 +62,7 @@ export async function verifyMilestones(
         ),
       );
     } else {
-      logger.warn(emojify(`No open issues :heavy_check_mark:`));
+      logger.log(emojify(`No open issues :heavy_check_mark:`));
     }
   }
 
