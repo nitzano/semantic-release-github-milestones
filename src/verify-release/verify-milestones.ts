@@ -50,9 +50,9 @@ export async function verifyMilestones(
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: ${openIssues} issues open out of ${
+        `:triangular_flag_on_post: ${openIssues} open issues out of ${
           openIssues + closesIssues
-        })`,
+        }`,
       ),
     );
   }
