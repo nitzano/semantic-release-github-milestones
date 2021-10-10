@@ -4,6 +4,6 @@ export interface GithubMilestone {
   url: string;
   htmlUrl: string;
   openIssues?: number;
-  closesIssues?: number;
+  closedIssues?: number;
   state?: 'open' | 'closed' | 'all';
 }
