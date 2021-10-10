@@ -24,7 +24,7 @@ function compareMilestone(
  * @return {*}  {(GithubMilestone | undefined)}
  */
 export function findMilestone(
-  milestones: GithubMilestone[],
+  milestones: GithubMilestone[] = [],
   {
     nextReleaseVersion,
     nextReleaseName,
