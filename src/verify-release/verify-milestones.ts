@@ -42,12 +42,12 @@ export async function verifyMilestones(
   });
 
   if (milestone) {
-    const {openIssues = 0, closesIssues = 0} = milestone;
+    const {openIssues = 0, closesIssues = 0, title = ''} = milestone;
 
     logger.log(
       emojify(
         `:triangular_flag_on_post: processing ${
-          milestone?.title ?? '?'
+          title ?? ''
         } :flashlight: issues=${openIssues}/${openIssues + closesIssues}`,
       ),
     );
