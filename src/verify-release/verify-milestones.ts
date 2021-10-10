@@ -43,7 +43,7 @@ export async function verifyMilestones(
       emojify(
         `:triangular_flag_on_post: processing ${
           milestone?.title ?? '?'
-        } issues=${milestone.openIssues ?? '?'}/${
+        } :flashlight: issues=${milestone.openIssues ?? '?'}/${
           milestone.closesIssues ?? '?'
         }`,
       ),
