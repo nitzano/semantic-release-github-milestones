@@ -54,7 +54,7 @@ export async function verifyMilestones(
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: Issues ${openIssues} open out of ${
+        `:triangular_flag_on_post: ${openIssues} issues open out of ${
           openIssues + closesIssues
         })`,
       ),
