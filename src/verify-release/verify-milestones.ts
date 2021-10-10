@@ -39,13 +39,13 @@ export async function verifyMilestones(
   });
 
   if (milestone) {
+    const {openIssues = 0, closesIssues = 0} = milestone;
+
     logger.log(
       emojify(
         `:triangular_flag_on_post: processing ${
           milestone?.title ?? '?'
-        } :flashlight: issues=${milestone.openIssues ?? '?'}/${
-          milestone.closesIssues ?? '?'
-        }`,
+        } :flashlight: issues=${openIssues}/${openIssues + closesIssues}`,
       ),
     );
   }
