@@ -43,19 +43,22 @@ export async function verifyMilestones(
 
   if (milestone) {
     const {openIssues = 0, closesIssues = 0, title = ''} = milestone;
-    const issuesIcon = openIssues > 0 ? ':warning:' : ':heavy_check_mark:';
-
-    logger.log(
-      emojify(`:triangular_flag_on_post: Found milestone: ${title ?? ''}`),
-    );
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: ${openIssues}${issuesIcon} open issues out of ${
-          openIssues + closesIssues
-        }`,
+        `:triangular_flag_on_post: Milestone: ${
+          title ?? ''
+        } :triangular_flag_on_post:`,
       ),
     );
+
+    logger.log(emojify(`${openIssues + closesIssues} total issues`));
+
+    if (openIssues > 0) {
+      logger.log(emojify(`${openIssues} open issues :warning:`));
+    } else {
+      logger.warn(emojify(`No open issues :heavy_check_mark:`));
+    }
   }
 
   if (errors.length > 0) {
