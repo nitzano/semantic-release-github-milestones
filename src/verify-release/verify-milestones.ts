@@ -45,11 +45,7 @@ export async function verifyMilestones(
     const {openIssues = 0, closesIssues = 0, title = ''} = milestone;
 
     logger.log(
-      emojify(
-        `:triangular_flag_on_post: processing milestone${
-          title ?? ''
-        } :flashlight: issues=${openIssues}/${openIssues + closesIssues}`,
-      ),
+      emojify(`:triangular_flag_on_post: Found milestone${title ?? ''}`),
     );
 
     logger.log(
