@@ -46,9 +46,17 @@ export async function verifyMilestones(
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: processing ${
+        `:triangular_flag_on_post: processing milestone${
           title ?? ''
         } :flashlight: issues=${openIssues}/${openIssues + closesIssues}`,
+      ),
+    );
+
+    logger.log(
+      emojify(
+        `:triangular_flag_on_post: Issues ${openIssues} open out of ${
+          openIssues + closesIssues
+        })`,
       ),
     );
   }
