@@ -40,7 +40,13 @@ export async function verifyMilestones(
 
   if (milestone) {
     logger.log(
-      emojify(`:triangular_flag_on_post: processing ${milestone?.title ?? ''}`),
+      emojify(
+        `:triangular_flag_on_post: processing ${
+          milestone?.title ?? '?'
+        } issues=${milestone.openIssues ?? '?'}/${
+          milestone.closesIssues ?? '?'
+        }`,
+      ),
     );
   }
 
