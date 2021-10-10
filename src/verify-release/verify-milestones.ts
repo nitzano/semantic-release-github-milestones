@@ -31,10 +31,7 @@ export async function verifyMilestones(
   debugLogger(`branch=${JSON.stringify(branch, null, 2)}`);
   debugLogger(`nextRelease = ${JSON.stringify(nextRelease, null, 2)}`);
 
-  /** *
-
-   */
-
+  // Find milestone by one of the options
   const milestone: GithubMilestone | undefined = findMilestone(milestones, {
     nextReleaseVersion,
     branchName,
