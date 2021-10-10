@@ -42,7 +42,7 @@ export async function verifyMilestones(
   });
 
   if (milestone) {
-    const {openIssues = 0, closesIssues = 0, title = '', htmlUrl} = milestone;
+    const {openIssues = 0, closedIssues = 0, title = '', htmlUrl} = milestone;
 
     logger.log(
       emojify(
@@ -53,7 +53,7 @@ export async function verifyMilestones(
     );
 
     logger.log(emojify(`(${htmlUrl})`));
-    logger.log(emojify(`${openIssues + closesIssues} total issues`));
+    logger.log(emojify(`${openIssues + closedIssues} total issues`));
 
     if (openIssues > 0) {
       logger.log(
