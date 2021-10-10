@@ -8,12 +8,34 @@ function compareMilestone(
   return find(milestones, ({title: milestoneName}) => milestoneName === value);
 }
 
+/**
+ * Try to find a milestone by comparing it's title to:
+ * 1. next release name (with v)
+ * 2. next release version (without v)
+ * 3. branch name
+ * 4. channel name
+ *
+ * @export
+ * @param {GithubMilestone[]} milestones
+ * @param {string} [nextReleaseVersion]
+ * @param {string} [nextReleaseName]
+ * @param {string} [branchName]
+ * @param {string} [channelName]
+ * @return {*}  {(GithubMilestone | undefined)}
+ */
 export function findMilestone(
   milestones: GithubMilestone[],
-  nextReleaseVersion?: string,
-  nextReleaseName?: string,
-  branchName?: string,
-  channelName?: string,
+  {
+    nextReleaseVersion,
+    nextReleaseName,
+    branchName,
+    branchChannel,
+  }: {
+    nextReleaseVersion?: string;
+    nextReleaseName?: string;
+    branchName?: string;
+    branchChannel?: string;
+  } = {},
 ): GithubMilestone | undefined {
   let milestone: GithubMilestone | undefined;
 
@@ -39,7 +61,7 @@ export function findMilestone(
   }
 
   // Channel name
-  milestone = compareMilestone(milestones, channelName);
+  milestone = compareMilestone(milestones, branchChannel);
 
   if (milestone) {
     return milestone;

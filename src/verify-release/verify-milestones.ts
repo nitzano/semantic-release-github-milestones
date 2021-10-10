@@ -1,9 +1,9 @@
 import AggregateError from 'aggregate-error';
-import {find} from 'lodash';
 import {emojify} from 'node-emoji';
 import {Context, GlobalConfig} from 'semantic-release';
 import {getLogger} from '../logger';
 import {GithubMilestone} from '../types/github-milestone';
+import {findMilestone} from './find-milestone';
 import {BranchInfo} from './types';
 
 const debugLogger = getLogger();
@@ -26,44 +26,26 @@ export async function verifyMilestones(
   const errors: Error[] = [];
   const branch: BranchInfo = (context as any).branch as BranchInfo;
   const {version: nextReleaseVersion} = nextRelease ?? {};
+  const {name: branchName, channel: branchChannel} = branch;
 
-  console.log(`branch=${JSON.stringify(branch, null, 2)}`);
-
+  debugLogger(`branch=${JSON.stringify(branch, null, 2)}`);
   debugLogger(`nextRelease = ${JSON.stringify(nextRelease, null, 2)}`);
 
   /** *
-   * Try to find a milestone by comparing it's title to:
-   * 1. next release name (with v)
-   * 2. next release version (without v)
-   * 3. branch name
-   * 4. channel name
+
    */
 
-  let milestone: GithubMilestone | undefined;
-
-  milestone = find(
-    milestones,
-    ({title: milestoneName}) => milestoneName === nextReleaseVersion,
-  );
+  const milestone: GithubMilestone | undefined = findMilestone(milestones, {
+    nextReleaseVersion,
+    branchName,
+    branchChannel,
+  });
 
   if (milestone) {
-    debugLogger(
-      `${milestone?.title ?? 'title'} equals nextRelease.version ${
-        nextReleaseVersion ?? ''
-      }`,
-    );
-  } else {
-    milestone = find(
-      milestones,
-      ({title: milestoneName}) => milestoneName === nextReleaseVersion,
+    logger.log(
+      emojify(`:triangular_flag_on_post: processing ${milestone?.title ?? ''}`),
     );
   }
-
-  logger.log(
-    emojify(
-      `:triangular_flag_on_post: processing ${milestones?.length} milestones`,
-    ),
-  );
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
