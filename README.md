@@ -24,12 +24,16 @@
 | `success`          | Close the target [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). |
 | `fail`             | Show a descriptive message to why the release failed                                                                               |
 
-# Highlights
+## Highlights
 
-1. Verifies all issues are closed on matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) before releasing a new version.
-2. Appends milestone data to releases (FUTURE VERSION)
-3. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
+1. Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
 
+
+### Future versions
+
+1. Verifies all issues are closed on matching milestone before releasing a new version.
+1. Appends milestone data to releases (FUTURE VERSION)
+1. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
 ## Examples
 
 ### Milestone with open issues
