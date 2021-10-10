@@ -1,7 +1,11 @@
 import AggregateError from 'aggregate-error';
 import {emojify} from 'node-emoji';
 import {Context, GlobalConfig} from 'semantic-release';
+import {getLogger} from '../logger';
 import {GithubMilestone} from '../types/github-milestone';
+import {BranchInfo} from './types';
+
+const debugLogger = getLogger();
 
 /**
  * Verify github milestones
@@ -16,9 +20,14 @@ export async function verifyMilestones(
   context: Context,
   milestones: GithubMilestone[],
 ) {
-  //   Const {env, options, logger} = context;
-  const {logger} = context;
+  const {logger, nextRelease} = context;
+
   const errors: Error[] = [];
+  const branch: BranchInfo = (context as any).branch as BranchInfo;
+
+  console.log(`branch=${JSON.stringify(branch, null, 2)}`);
+
+  debugLogger(`nextRelease = ${JSON.stringify(nextRelease, null, 2)}`);
 
   logger.log(
     emojify(
