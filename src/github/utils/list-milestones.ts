@@ -28,9 +28,11 @@ export async function listMilestones(
       description,
       closed_issues: closedIssues,
       open_issues: openIssues,
+      html_url: htmlUrl,
       state,
     }) => ({
       title,
+      htmlUrl,
       description,
       url,
       openIssues,

@@ -42,20 +42,25 @@ export async function verifyMilestones(
   });
 
   if (milestone) {
-    const {openIssues = 0, closesIssues = 0, title = ''} = milestone;
+    const {openIssues = 0, closesIssues = 0, title = '', htmlUrl} = milestone;
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: Milestone: ${
+        `:triangular_flag_on_post: Github Milestone: ${
           title ?? ''
-        } :triangular_flag_on_post:`,
+        }  :triangular_flag_on_post:`,
       ),
     );
 
+    logger.log(emojify(`(${htmlUrl})`));
     logger.log(emojify(`${openIssues + closesIssues} total issues`));
 
     if (openIssues > 0) {
-      logger.log(emojify(`${openIssues} open issues :warning:`));
+      logger.log(
+        emojify(
+          `:warning: :warning:  ${openIssues} open issues :warning: :warning:`,
+        ),
+      );
     } else {
       logger.warn(emojify(`No open issues :heavy_check_mark:`));
     }
