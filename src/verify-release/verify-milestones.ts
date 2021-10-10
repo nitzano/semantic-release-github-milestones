@@ -43,14 +43,15 @@ export async function verifyMilestones(
 
   if (milestone) {
     const {openIssues = 0, closesIssues = 0, title = ''} = milestone;
+    const issuesIcon = openIssues > 0 ? ':warning:' : ':heavy_check_mark:';
 
     logger.log(
-      emojify(`:triangular_flag_on_post: Found milestone${title ?? ''}`),
+      emojify(`:triangular_flag_on_post: Found milestone: ${title ?? ''}`),
     );
 
     logger.log(
       emojify(
-        `:triangular_flag_on_post: ${openIssues} open issues out of ${
+        `:triangular_flag_on_post: ${openIssues}${issuesIcon} open issues out of ${
           openIssues + closesIssues
         }`,
       ),
