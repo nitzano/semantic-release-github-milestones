@@ -25,14 +25,14 @@
 
 ## Highlights
 
-*  Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
+*  Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) when releasing
 
 
 ### Future versions
 
-* Verifies all issues are closed on matching milestone before releasing a new version.
-* Appends milestone data to releases (FUTURE VERSION)
-* Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
+* Appends milestone data to Github Releases 
+* Automatically closes milestones when releasing
+* Can protect releasing only milestones with no closed issues
 ## Examples
 
 ### Milestone with open issues
