@@ -47,9 +47,9 @@
 ### Milestone with no open issues
 
 ```
-[semantic-release-github-milestones] › ℹ  🚩 Github Milestone: v1.0.1  🚩
+[semantic-release-github-milestones] › ℹ  🚩 Github Milestone: next  🚩
 [semantic-release-github-milestones] › ℹ  (https://github.com/owner1/repo1/milestone/1)
-[semantic-release-github-milestones] › ℹ  2 total issues
+[semantic-release-github-milestones] › ℹ  15 total issues
 [semantic-release-github-milestones] › ℹ  No open issues ✔️
 ```
 
