@@ -14,8 +14,8 @@
 
 | Step               | Description                                                                                                                        |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `verifyConditions` | Verify github tokens are present and valid                                                                                         |
-| `verifyRelease`    | Display information regarding the github milestone                                                               |
+| `verifyConditions` | Verify github tokens are present and valid.                                                                                         |
+| `verifyRelease`    | Display information regarding the github milestone.                                                               |
 <!-- | `success`          | [TBD] Close the target [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). |
 | `fail`             | [TBD] Show a descriptive message to why the release failed                                                                               | -->
 
