@@ -19,9 +19,9 @@
 | Step               | Description                                                                                                                        |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `verifyConditions` | Verify github tokens are present and valid                                                                                         |
-| `verifyRelease`    | Verify all github issues are closed for the target github milestones                                                               |
-| `success`          | Close the target [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). |
-| `fail`             | Show a descriptive message to why the release failed                                                                               |
+| `verifyRelease`    | Display information regarding the github milestone                                                               |
+<!-- | `success`          | [TBD] Close the target [GitHub milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). |
+| `fail`             | [TBD] Show a descriptive message to why the release failed                                                                               | -->
 
 ## Highlights
 
