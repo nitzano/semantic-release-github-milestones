@@ -24,15 +24,21 @@
 | `fail`             | [TBD] Show a descriptive message to why the release failed                                                                               | -->
 
 ## Highlights
+<br>
 
-*  Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) when releasing
+*  Shows [Github milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) summary information when releasing a new version.
+* Matches milestones either by:
+  * Next release version (`v1.1.0`, `2.2.0`, ...)
+  * Channel name (`next`, `beta`)
+  * Branch name (`next`, `master`, ...)
 
 
 ### Future versions
 
 * Appends milestone data to Github Releases 
-* Automatically closes milestones when releasing
-* Can protect releasing only milestones with no closed issues
+* Automatically closes milestones after releasing
+* Protects releasing only milestones with no closed issues
+  
 ## Examples
 
 ### Milestone with open issues
