@@ -1,10 +1,6 @@
 <h1 align="center" style="border-bottom: none;"> semantic-release-github-milestones🚩🚀</h1>
 <h2 align="center">Sync <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">Github milestones</a> with <a href="https://github.com/semantic-release/semantic-release">semantic-release</a></h2>
-<hr>
-<center>
 
-
-</center>
 
 <div align="center">
 
