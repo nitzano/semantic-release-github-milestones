@@ -33,7 +33,7 @@
 
 * Appends milestone data to Github Releases 
 * Automatically closes milestones after releasing
-* Protects releasing only milestones with no closed issues
+* Protects against releasing milestones with open issues
   
 ## Examples
 
