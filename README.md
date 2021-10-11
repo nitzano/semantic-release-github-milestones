@@ -20,7 +20,6 @@
 | `fail`             | [TBD] Show a descriptive message to why the release failed                                                                               | -->
 
 ## Highlights
-<br>
 
 *  Shows [Github milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) summary information when releasing a new version.
 * Matches milestones either by:
