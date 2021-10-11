@@ -56,8 +56,10 @@
 
 
 # Install
+```
+npm install --save-dev semantic-release-github-milestones
+```
 
-`npm install --save-dev semantic-release-github-milestones`
 
 # Usage
 
