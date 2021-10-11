@@ -3,7 +3,6 @@
 <hr>
 <center>
 
-<h1 align="center">🚧 under construction 🚧</h1>
 
 </center>
 
