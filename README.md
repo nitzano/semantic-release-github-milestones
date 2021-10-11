@@ -1,5 +1,5 @@
 <h1 align="center" style="border-bottom: none;"> semantic-release-github-milestones🚩🚀</h1>
-<h2 align="center">Use <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">Github milestones</a> with <a href="https://github.com/semantic-release/semantic-release">semantic-release</a></h2>
+<h2 align="center">Sync <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">Github milestones</a> with <a href="https://github.com/semantic-release/semantic-release">semantic-release</a></h2>
 <hr>
 <center>
 
@@ -25,14 +25,14 @@
 
 ## Highlights
 
-1. Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
+*  Shows a summary information of matching [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
 
 
 ### Future versions
 
-1. Verifies all issues are closed on matching milestone before releasing a new version.
-1. Appends milestone data to releases (FUTURE VERSION)
-1. Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
+* Verifies all issues are closed on matching milestone before releasing a new version.
+* Appends milestone data to releases (FUTURE VERSION)
+* Automatically closes milestone when a release with the same name is deployed (FUTURE VERSION)
 ## Examples
 
 ### Milestone with open issues
