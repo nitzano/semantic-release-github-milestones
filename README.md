@@ -61,16 +61,29 @@
 
 # Usage
 
-TBD
+The plugin can be configured in the [**semantic-release** configuration file](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration):
 
-# Configuration
+```json
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "semantic-release-github-milestones",
+  ]
+}
+```
 
-TBD
+## Configuration
 
-## Environment variables
+Github authentication  is **required** and can be set via [environment variables](#environment-variables).
 
-TBD
+### Environment variables
 
-## Options
+| Variable                                           | Description                                               |
+| -------------------------------------------------- | --------------------------------------------------------- |
+| `GH_TOKEN` or `GITHUB_TOKEN`                       | **Required.** The token used to authenticate with GitHub. |
 
-TBD
+
+<!-- ## Options
+
+TBD -->
