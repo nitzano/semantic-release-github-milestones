@@ -57,7 +57,7 @@
 
 # Install
 
-TBD
+`npm install --save-dev semantic-release-github-milestones`
 
 # Usage
 
