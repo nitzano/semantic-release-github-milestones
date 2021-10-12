@@ -45,7 +45,7 @@
 [semantic-release-github-milestones] › ℹ  ⚠️ ⚠️  2 open issues ⚠️ ⚠️
 ```
 
-### Milestone with no open issues
+### Milestone without open issues
 
 ```
 [semantic-release-github-milestones] › ℹ  🚩 Github Milestone: next  🚩
