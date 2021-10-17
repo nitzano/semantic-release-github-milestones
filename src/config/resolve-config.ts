@@ -20,7 +20,7 @@ export function resolveConfig(
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
 
   // Options
-  const {closeMilestones} = options;
+  const {closeMilestone} = options;
 
-  return {githubToken, closeMilestones};
+  return {githubToken, closeMilestone};
 }
