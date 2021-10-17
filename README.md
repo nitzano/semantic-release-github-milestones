@@ -87,6 +87,10 @@ Github authentication  is **required** and can be set via [environment variables
 | `GH_TOKEN` or `GITHUB_TOKEN`                       | **Required.** The token used to authenticate with GitHub. |
 
 
-<!-- ## Options
+## Options
 
-TBD -->
+| Option | Description | Default |
+| ------ | ----------- | ------- |
+| `closeMilestone` | Close milestone after releasing | `false` | 
+
+
