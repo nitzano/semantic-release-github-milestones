@@ -29,7 +29,7 @@
     "@octokit/rest": "^18.12.0",
     "@semantic-release/error": "^3.0.0",
     "aggregate-error": "^4.0.0",
-    "debug": "^4.3.2",
+    "debug": "^4.3.3",
     "git-url-parse": "^11.6.0",
     "lodash": "^4.17.21",
     "node-emoji": "^1.11.0"
