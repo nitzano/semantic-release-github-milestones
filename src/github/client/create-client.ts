@@ -1,6 +1,6 @@
 import {throttling} from '@octokit/plugin-throttling';
 import {Octokit} from '@octokit/rest';
-import {getLogger} from '../../logger';
+import {getLogger} from '../../logger.js';
 
 const logger = getLogger();
 

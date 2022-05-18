@@ -1,6 +1,6 @@
 import {Octokit} from '@octokit/rest';
-import {getLogger} from '../../logger';
-import {GithubMilestone} from '../../types/github-milestone';
+import {getLogger} from '../../logger.js';
+import {GithubMilestone} from '../../types/github-milestone.js';
 
 const debugLogger = getLogger().extend('list-milestones');
 
