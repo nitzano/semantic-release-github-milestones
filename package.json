@@ -54,7 +54,7 @@
     "faker": "^5.5.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "nock": "^13.2.1",
+    "nock": "^13.2.6",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "semantic-release": "18.0.1",
