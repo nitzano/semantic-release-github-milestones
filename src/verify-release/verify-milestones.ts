@@ -1,10 +1,10 @@
 import AggregateError from 'aggregate-error';
 import {emojify} from 'node-emoji';
 import {Context, GlobalConfig} from 'semantic-release';
-import {getLogger} from '../logger';
-import {GithubMilestone} from '../types/github-milestone';
-import {findMilestone} from './find-milestone';
-import {BranchInfo} from './types';
+import {getLogger} from '../logger.js';
+import {GithubMilestone} from '../types/github-milestone.js';
+import {findMilestone} from './find-milestone.js';
+import {BranchInfo} from './types.js';
 
 const debugLogger = getLogger();
 

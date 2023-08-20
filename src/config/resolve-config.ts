@@ -1,5 +1,5 @@
-import {getLogger} from '../logger';
-import {Configuration, PluginConfig} from './types';
+import {getLogger} from '../logger.js';
+import {Configuration, PluginConfig} from './types.js';
 
 const logger = getLogger().extend('resolve-config');
 
