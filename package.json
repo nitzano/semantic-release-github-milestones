@@ -2,6 +2,7 @@
   "name": "semantic-release-github-milestones",
   "version": "0.0.0-development",
   "main": "build/index.js",
+  "module": "build/index.js",
   "repository": "git@github.com:nitzano/semantic-release-github-milestones.git",
   "author": "Nitzan Ohana <16689354+nitzano@users.noreply.github.com>",
   "bugs": {
