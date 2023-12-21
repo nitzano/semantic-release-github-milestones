@@ -1,13 +1,12 @@
 import SemanticReleaseError from '@semantic-release/error';
 import AggregateError from 'aggregate-error';
-import gitUrlParse, {GitUrl} from 'git-url-parse';
-import {Context, GlobalConfig} from 'semantic-release';
-import {resolveConfig} from '../config/resolve-config';
-import {PluginConfig} from '../config/types';
-import {createClient} from '../github/client/create-client';
-import {listMilestones} from '../github/utils/list-milestones';
-import {getLogger} from '../logger';
-import {GithubMilestone} from '../types/github-milestone';
+import gitUrlParse, { GitUrl } from 'git-url-parse';
+import { GlobalConfig, VerifyConditionsContext } from 'semantic-release';
+import { resolveConfig } from '../config/resolve-config';
+import { createClient } from '../github/client/create-client';
+import { listMilestones } from '../github/utils/list-milestones';
+import { getLogger } from '../logger';
+import { GithubMilestone } from '../types/github-milestone';
 
 const debugLogger = getLogger();
 
@@ -18,15 +17,15 @@ const debugLogger = getLogger();
  */
 export async function verifyGithub(
   pluginConfig: GlobalConfig,
-  context: Context,
+  context: VerifyConditionsContext,
 ): Promise<GithubMilestone[]> {
-  const {env, options} = context;
+  const {env } = context;
   const errors: Error[] = [];
 
-  const {repositoryUrl = ''} = options as PluginConfig;
+  const {repositoryUrl = ''} = pluginConfig;
 
   // Build config
-  const config = resolveConfig(options as PluginConfig, env);
+  const config = resolveConfig(pluginConfig, env);
   pluginConfig.config = config;
 
   debugLogger(`config=${JSON.stringify(config, null, 2)}`);
