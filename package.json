@@ -76,8 +76,8 @@
       "unicorn/prefer-node-protocol": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
-      "import/extensions": "off",
-      "@typescript-eslint/ban-type": "off"
+      "@typescript-eslint/ban-types": "off",
+      "import/extensions": "off"
     }
   },
   "lint-staged": {
