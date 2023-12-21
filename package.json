@@ -61,7 +61,8 @@
     "rimraf": "^3.0.2",
     "semantic-release": "^22.0.0",
     "sinon": "^11.1.2",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "xo": "^0.56.0"
   },
@@ -75,18 +76,19 @@
       "unicorn/prefer-node-protocol": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
-      "import/extensions": "off"
+      "import/extensions": "off",
+      "@typescript-eslint/ban-type": "off"
     }
   },
   "lint-staged": {
     "*.{js,css,md,ts}": "xo --fix"
   },
   "ava": {
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=tsx"
     ]
   },
   "packageManager": "yarn@4.0.2"
