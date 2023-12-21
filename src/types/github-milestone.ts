@@ -1,6 +1,6 @@
 export type GithubMilestone = {
   title: string | undefined;
-  description?: string | undefined;
+  description: string | undefined;
   url: string;
   htmlUrl: string;
   openIssues?: number;
