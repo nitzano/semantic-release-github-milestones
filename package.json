@@ -39,6 +39,7 @@
     "prebuild": "yarn clean",
     "build": "tsc",
     "release": "semantic-release",
+    "format": "xo --fix",
     "prepare": "husky install",
     "test": "nyc ava",
     "test:watch": "yarn test --watch",
@@ -70,7 +71,8 @@
     "space": true,
     "rules": {
       "unicorn/prefer-node-protocol": "off",
-      "@typescript-eslint/no-unsafe-call": "off"
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off"
     }
   },
   "lint-staged": {
