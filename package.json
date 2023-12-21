@@ -8,7 +8,7 @@
     "url": "https://github.com/nitzano/semantic-release-github-milestones/issues"
   },
   "engines": {
-    "node": ">=14.17"
+    "node": ">=20.0"
   },
   "files": [
     "build"
