@@ -1,4 +1,3 @@
-// Milestones
 export type GithubMilestone = {
   title: string | undefined;
   description: string | undefined;
