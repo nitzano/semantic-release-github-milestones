@@ -1,9 +1,9 @@
 export type GithubMilestone = {
-  title: string | undefined;
+  title?: string;
   description: string | undefined;
   url: string;
   htmlUrl: string;
-  openIssues?: number;
-  closedIssues?: number;
-  state?: 'open' | 'closed' | 'all';
+  openIssues: number;
+  closedIssues: number;
+  state?: 'open' | 'closed';
 };
