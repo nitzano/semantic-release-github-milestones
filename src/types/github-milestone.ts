@@ -1,6 +1,8 @@
+type NullableString = string | undefined;
+
 export type GithubMilestone = {
   title?: string;
-  description: string | undefined;
+  description: NullableString;
   url: string;
   htmlUrl: string;
   openIssues: number;
