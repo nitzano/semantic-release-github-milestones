@@ -1,4 +1,9 @@
-import {Context, GlobalConfig} from 'semantic-release';
+import {
+  GlobalConfig,
+  PublishContext,
+  VerifyConditionsContext,
+  VerifyReleaseContext,
+} from 'semantic-release';
 import {GithubMilestone} from './types/github-milestone';
 import {verifyGithub} from './verify-conditions/verify-github';
 import {verifyMilestones} from './verify-release/verify-milestones';
@@ -8,7 +13,7 @@ let milestones: GithubMilestone[] = [];
 
 export async function verifyConditions(
   pluginConfig: GlobalConfig,
-  context: Context,
+  context: VerifyConditionsContext,
 ) {
   // Verify conditions
   milestones = await verifyGithub(pluginConfig, context);
@@ -17,7 +22,7 @@ export async function verifyConditions(
 
 export async function verifyRelease(
   pluginConfig: GlobalConfig,
-  context: Context,
+  context: VerifyReleaseContext,
 ) {
   if (!verified) {
     await verifyGithub(pluginConfig, context);
@@ -27,7 +32,10 @@ export async function verifyRelease(
   await verifyMilestones(pluginConfig, context, milestones);
 }
 
-export async function publish(pluginConfig: GlobalConfig, context: Context) {
+export async function publish(
+  pluginConfig: GlobalConfig,
+  context: PublishContext,
+) {
   if (!verified) {
     await verifyGithub(pluginConfig, context);
     verified = true;

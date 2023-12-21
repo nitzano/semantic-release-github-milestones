@@ -1,6 +1,6 @@
 import AggregateError from 'aggregate-error';
 import {emojify} from 'node-emoji';
-import {Context, GlobalConfig} from 'semantic-release';
+import {GlobalConfig, VerifyReleaseContext} from 'semantic-release';
 import {getLogger} from '../logger';
 import {GithubMilestone} from '../types/github-milestone';
 import {findMilestone} from './find-milestone';
@@ -18,7 +18,7 @@ const debugLogger = getLogger();
  */
 export async function verifyMilestones(
   pluginConfig: GlobalConfig,
-  context: Context,
+  context: VerifyReleaseContext,
   milestones: GithubMilestone[],
 ) {
   const {logger, nextRelease} = context;
