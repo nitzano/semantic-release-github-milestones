@@ -1,10 +1,10 @@
 import {
-  GlobalConfig,
-  PublishContext,
-  VerifyConditionsContext,
-  VerifyReleaseContext,
+  type GlobalConfig,
+  type PublishContext,
+  type VerifyConditionsContext,
+  type VerifyReleaseContext,
 } from 'semantic-release';
-import {GithubMilestone} from './types/github-milestone';
+import {type GithubMilestone} from './types/github-milestone';
 import {verifyGithub} from './verify-conditions/verify-github';
 import {verifyMilestones} from './verify-release/verify-milestones';
 

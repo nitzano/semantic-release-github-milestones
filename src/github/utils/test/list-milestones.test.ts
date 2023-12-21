@@ -1,4 +1,5 @@
-import {Octokit} from '@octokit/rest';
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import {type Octokit} from '@octokit/rest';
 import test from 'ava';
 import nock from 'nock';
 import {createClient} from '../../client/create-client';
