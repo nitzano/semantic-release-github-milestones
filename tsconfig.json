@@ -3,12 +3,10 @@
   "compilerOptions": {
     "outDir": "./build" /* Redirect output structure to the directory. */, 
     "esModuleInterop": true,   
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src"
   },
-	"include": [
-		"src/**/*.ts"
-	],
-  "exclude": [
-    "src/**/*.test.ts", "src/**/*.spec.ts"
-  ]
+  // "exclude": [
+  //   "src/**/*.test.ts", "src/**/*.spec.ts"
+  // ]
 }
