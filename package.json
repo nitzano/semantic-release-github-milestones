@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
+    "@tsconfig/strictest": "^2.0.2",
     "@types/debug": "^4.1.7",
     "@types/esm": "^3",
     "@types/git-url-parse": "^9.0.1",

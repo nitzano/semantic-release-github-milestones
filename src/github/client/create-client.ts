@@ -33,6 +33,8 @@ export function createClient(githubToken: string): Octokit {
           logger(`Retrying after ${retryAfter} seconds!`);
           return true;
         }
+
+        return false;
       },
       onAbuseLimit(
         _retryAfter: number,

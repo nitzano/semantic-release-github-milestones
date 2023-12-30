@@ -18,9 +18,10 @@ export function resolveConfig(
   logger('reading envs');
   // Envs
   const githubToken = env.GH_TOKEN || env.GITHUB_TOKEN;
+  if (!githubToken) throw new Error('no github token');
 
   // Options
-  const {closeMilestones} = pluginsConfig;
+  const {closeMilestones = false} = pluginsConfig;
 
   return {githubToken, closeMilestones};
 }
