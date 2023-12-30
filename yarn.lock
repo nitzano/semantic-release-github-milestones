@@ -6422,15 +6422,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-emoji@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "node-emoji@npm:1.11.0"
-  dependencies:
-    lodash: "npm:^4.17.21"
-  checksum: 5dac6502dbef087092d041fcc2686d8be61168593b3a9baf964d62652f55a3a9c2277f171b81cccb851ccef33f2d070f45e633fab1fda3264f8e1ae9041c673f
-  languageName: node
-  linkType: hard
-
 "node-emoji@npm:^2.1.3":
   version: 2.1.3
   resolution: "node-emoji@npm:2.1.3"
@@ -8077,7 +8068,7 @@ __metadata:
     lint-staged: "npm:^11.2.3"
     lodash: "npm:^4.17.21"
     nock: "npm:^13.1.3"
-    node-emoji: "npm:^1.11.0"
+    node-emoji: "npm:^2.1.3"
     nyc: "npm:^15.1.0"
     rimraf: "npm:^3.0.2"
     semantic-release: "npm:^22.0.0"
