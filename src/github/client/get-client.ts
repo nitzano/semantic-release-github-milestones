@@ -1,5 +1,5 @@
-import {Octokit} from '@octokit/rest';
-import {createClient} from './create-client';
+import {type Octokit} from '@octokit/rest';
+import {createClient} from './create-client.js';
 
 let client: Octokit;
 

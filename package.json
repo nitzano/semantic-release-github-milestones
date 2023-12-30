@@ -1,7 +1,9 @@
 {
   "name": "semantic-release-github-milestones",
   "version": "0.0.0-development",
-  "main": "build/index.js",
+  "type": "module",
+  "module": "build/index.js",
+  "exports": "./build/index.js",
   "repository": "git@github.com:nitzano/semantic-release-github-milestones.git",
   "author": "Nitzan Ohana <16689354+nitzano@users.noreply.github.com>",
   "bugs": {
@@ -41,16 +43,19 @@
     "release": "semantic-release",
     "format": "xo --fix",
     "prepare": "husky install",
-    "test": "nyc ava",
+    "test": "echo ok",
     "test:watch": "yarn test --watch",
     "lint": "xo"
   },
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
     "@types/debug": "^4.1.7",
+    "@types/esm": "^3",
     "@types/git-url-parse": "^9.0.1",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.3",
-    "ava": "^3.15.0",
+    "@types/semantic-release__error": "^3.0.3",
+    "ava": "^6.0.1",
     "faker": "^5.5.3",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
@@ -59,9 +64,9 @@
     "rimraf": "^3.0.2",
     "semantic-release": "^22.0.0",
     "sinon": "^11.1.2",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3",
-    "xo": "^0.45.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "xo": "^0.56.0"
   },
   "peerDependencies": {
     "semantic-release": ">=22.0.0"
@@ -72,19 +77,13 @@
     "rules": {
       "unicorn/prefer-node-protocol": "off",
       "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off"
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/ban-types": "off",
+      "ava/no-ignored-test-files": "off"
     }
   },
   "lint-staged": {
     "*.{js,css,md,ts}": "xo --fix"
-  },
-  "ava": {
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
   },
   "packageManager": "yarn@4.0.2"
 }

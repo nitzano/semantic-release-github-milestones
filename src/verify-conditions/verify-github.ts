@@ -1,12 +1,15 @@
 import SemanticReleaseError from '@semantic-release/error';
 import AggregateError from 'aggregate-error';
-import gitUrlParse, {GitUrl} from 'git-url-parse';
-import {GlobalConfig, VerifyConditionsContext} from 'semantic-release';
-import {resolveConfig} from '../config/resolve-config';
-import {createClient} from '../github/client/create-client';
-import {listMilestones} from '../github/utils/list-milestones';
-import {getLogger} from '../logger';
-import {GithubMilestone} from '../types/github-milestone';
+import gitUrlParse, {type GitUrl} from 'git-url-parse';
+import {
+  type GlobalConfig,
+  type VerifyConditionsContext,
+} from 'semantic-release';
+import {resolveConfig} from '../config/resolve-config.js';
+import {createClient} from '../github/client/create-client.js';
+import {listMilestones} from '../github/utils/list-milestones.js';
+import {getLogger} from '../logger.js';
+import {type GithubMilestone} from '../types/github-milestone.js';
 
 const debugLogger = getLogger();
 

@@ -1,4 +1,4 @@
-export interface GithubClientOptions {
+export type GithubClientOptions = {
   githubToken: string;
   githubUrl: string;
-}
+};
