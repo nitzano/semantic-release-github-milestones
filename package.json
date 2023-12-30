@@ -4,6 +4,7 @@
   "type": "module",
   "module": "build/index.js",
   "exports": "./build/index.js",
+  "types": "./build/index.d.ts",
   "repository": "git@github.com:nitzano/semantic-release-github-milestones.git",
   "author": "Nitzan Ohana <16689354+nitzano@users.noreply.github.com>",
   "bugs": {

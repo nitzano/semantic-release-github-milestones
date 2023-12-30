@@ -4,6 +4,7 @@
     "outDir": "./build" /* Redirect output structure to the directory. */,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "rootDir": "./src"
   },
   "exclude": ["**/test/**/*"],
