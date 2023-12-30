@@ -75,7 +75,6 @@
     "prettier": true,
     "space": true,
     "rules": {
-      "unicorn/prefer-node-protocol": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/ban-types": "off",
