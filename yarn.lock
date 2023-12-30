@@ -3630,13 +3630,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esm@npm:^3.2.25":
-  version: 3.2.25
-  resolution: "esm@npm:3.2.25"
-  checksum: 8e60e8075506a7ce28681c30c8f54623fe18a251c364cd481d86719fc77f58aa055b293d80632d9686d5408aaf865ffa434897dc9fd9153c8b3f469fad23f094
-  languageName: node
-  linkType: hard
-
 "espree@npm:^9.0.0":
   version: 9.0.0
   resolution: "espree@npm:9.0.0"
@@ -8070,7 +8063,6 @@ __metadata:
     aggregate-error: "npm:^4.0.0"
     ava: "npm:^6.0.1"
     debug: "npm:^4.3.2"
-    esm: "npm:^3.2.25"
     faker: "npm:^5.5.3"
     git-url-parse: "npm:^11.6.0"
     husky: "npm:^7.0.2"
