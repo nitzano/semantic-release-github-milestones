@@ -4,9 +4,9 @@ import {
   type VerifyConditionsContext,
   type VerifyReleaseContext,
 } from 'semantic-release';
-import {type GithubMilestone} from './types/github-milestone';
-import {verifyGithub} from './verify-conditions/verify-github';
-import {verifyMilestones} from './verify-release/verify-milestones';
+import {type GithubMilestone} from './types/github-milestone.js';
+import {verifyGithub} from './verify-conditions/verify-github.js';
+import {verifyMilestones} from './verify-release/verify-milestones.js';
 
 let verified: boolean;
 let milestones: GithubMilestone[] = [];

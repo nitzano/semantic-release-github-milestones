@@ -2,9 +2,9 @@
 import {type Octokit} from '@octokit/rest';
 import test from 'ava';
 import nock from 'nock';
-import {createClient} from '../../client/create-client';
-import {listMilestones} from '../list-milestones';
-import {FAKE_MILESTONES} from './fixtures/fake-milestones';
+import {createClient} from '../../client/create-client.js';
+import {listMilestones} from '../list-milestones.js';
+import {FAKE_MILESTONES} from './fixtures/fake-milestones.js';
 
 test.afterEach.always(() => {
   // Clear nock

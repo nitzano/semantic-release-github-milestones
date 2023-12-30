@@ -1,5 +1,5 @@
 import {find} from 'lodash';
-import {type GithubMilestone} from '../types/github-milestone';
+import {type GithubMilestone} from '../types/github-milestone.js';
 
 function compareMilestone(
   milestones: GithubMilestone[],
