@@ -1,4 +1,4 @@
-import {find} from 'lodash';
+import find from 'lodash/find.js';
 import {type GithubMilestone} from '../types/github-milestone.js';
 
 function compareMilestone(
